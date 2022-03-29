@@ -1,0 +1,70 @@
+@import '../../styles/variables';
+
+.login {
+  h1,
+  h2,
+  h3 {
+    padding: 1.5rem 0;
+  }
+  &__main {
+  }
+  &__hero {
+    position: relative;
+    svg {
+      fill: $primary-light;
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    svg {
+      fill: $secondary;
+      max-width: 5rem;
+    }
+  }
+  &__contentContainer {
+    flex: 1;
+    max-width: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > * {
+      flex: 1;
+    }
+    h1 {
+      max-width: 70%;
+      font-size: 7rem;
+    }
+  }
+
+  &__providers {
+    max-width: 36rem;
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-size: 4rem;
+    }
+    h3 {
+      font-family: inherit;
+      font-size: inherit;
+    }
+  }
+  &__agreement {
+    margin: 0;
+  }
+  &__alternative {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+  &__footer {
+  }
+}

@@ -18,3 +18,9 @@ declare module '*.json' {
   const content: string;
   export default content;
 }
+declare module '*.module.scss' {
+  const content: {
+    [key in string]: string;
+  };
+  export default content;
+}

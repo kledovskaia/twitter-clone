@@ -1,0 +1,31 @@
+@import '../../styles/variables';
+
+.button {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > * + * {
+    margin-left: 0.5rem;
+    svg {
+      max-width: 3rem;
+    }
+  }
+  padding: 1rem;
+  border: 0;
+  border-radius: 10rem;
+  background-color: $secondary;
+  color: $primary-light;
+  font-weight: 600;
+
+  &_outline {
+    @extend .button_auth;
+    color: $secondary;
+  }
+  &_auth {
+    background-color: $primary-light;
+    color: inherit;
+    border: 0.1rem solid currentColor;
+    border-color: rgba($primary-dark, 0.25);
+  }
+}
