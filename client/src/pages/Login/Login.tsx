@@ -58,8 +58,10 @@ const Login = () => {
             </div>
           </div>
         </section>
-        <div className={s.login__hero}>
-          <img src={Hero} alt="" />
+        <div
+          style={{ backgroundImage: `url('${Hero}')` }}
+          className={s.login__hero}
+        >
           <TwitterIcon />
         </div>
       </div>
