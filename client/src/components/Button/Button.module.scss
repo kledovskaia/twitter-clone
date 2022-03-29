@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 
 .button {
+  cursor: pointer;
   font-size: 1.5rem;
   display: flex;
   justify-content: center;
@@ -18,16 +19,27 @@
   background-color: $secondary;
   color: $primary-light;
   font-weight: 600;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: darken($secondary, 10);
+  }
 
   &_outline {
     background-color: $primary-light;
     color: $secondary;
     border: 0.1rem solid currentColor;
     border-color: rgba($primary-dark, 0.15);
+    &:hover {
+      background-color: rgba($secondary, 0.1);
+    }
   }
   &_auth {
     @extend .button_outline;
     color: inherit;
     padding: 0.75rem;
+    &:hover {
+      background-color: rgba($primary-dark, 0.1);
+    }
   }
 }
