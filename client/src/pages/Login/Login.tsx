@@ -1,7 +1,29 @@
 import Hero from '../../assets/login-hero.png';
 import { ReactComponent as TwitterIcon } from '../../assets/twitter.svg';
+import { ReactComponent as GoogleIcon } from '../../assets/google.svg';
+import { ReactComponent as AppleIcon } from '../../assets/apple.svg';
 import Button from '../../components/Button/Button';
 import s from './Login.module.scss';
+
+const footerListItems = [
+  'About',
+  'Help Center',
+  'Terms of Service',
+  'Privacy Policy',
+  'Cookie Policy',
+  'Accessibility',
+  'Ads info',
+  'Blog',
+  'Status',
+  'Careers',
+  'Brand Resources',
+  'Advertising',
+  'Marketing',
+  'Twitter for Business',
+  'Developers',
+  'Directory',
+  'Settings',
+];
 
 const Login = () => {
   return (
@@ -13,9 +35,15 @@ const Login = () => {
             <h1>Happening now</h1>
             <div className={s.login__providers}>
               <h2>Join Twitter today.</h2>
-              <Button auth>Sign up with Google</Button>
-              <Button auth>Sign up with Apple</Button>
-              <div>or</div>
+              <Button auth>
+                <GoogleIcon />
+                <span>Sign up with Google</span>
+              </Button>
+              <Button auth>
+                <AppleIcon />
+                <span>Sign up with Apple</span>
+              </Button>
+              <div className={s.login__separator}>or</div>
               <Button>Sign up with phone or email</Button>
               <p className={s.login__agreement}>
                 By signing up, you agree to the{' '}
@@ -35,7 +63,16 @@ const Login = () => {
           <TwitterIcon />
         </div>
       </div>
-      <footer className={s.login__footer}></footer>
+      <footer className={s.login__footer}>
+        <ul>
+          {footerListItems.map((item) => (
+            <li key={item}>
+              <a href="#twitter">{item}</a>
+            </li>
+          ))}
+          <li>© 2022 Twitter, Inc.</li>
+        </ul>
+      </footer>
     </div>
   );
 };

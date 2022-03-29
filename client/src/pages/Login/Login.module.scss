@@ -4,7 +4,7 @@
   h1,
   h2,
   h3 {
-    padding: 1.5rem 0;
+    padding: 0.75rem 0;
   }
   &__main {
   }
@@ -20,14 +20,10 @@
     }
   }
   &__content {
+    padding: 4rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    svg {
-      fill: $secondary;
-      max-width: 5rem;
-    }
   }
   &__contentContainer {
     flex: 1;
@@ -35,6 +31,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    & > svg {
+      fill: $secondary;
+      max-width: 4.5rem;
+    }
 
     & > * {
       flex: 1;
@@ -46,25 +46,88 @@
   }
 
   &__providers {
-    max-width: 36rem;
+    max-width: 32rem;
     display: flex;
     flex-direction: column;
     h2 {
-      font-size: 4rem;
+      font-size: 3.5rem;
     }
     h3 {
       font-family: inherit;
       font-size: inherit;
     }
+    button:first-of-type {
+      margin-top: 2rem;
+    }
+    button + button {
+      margin-top: 2rem;
+    }
   }
   &__agreement {
+    letter-spacing: 0.05rem;
+    padding: 1rem 0;
     margin: 0;
+    font-size: 1rem;
+    color: rgba($primary-dark, 0.6);
+    a {
+      color: $secondary;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
   &__alternative {
     padding: 4rem 0;
     display: flex;
     flex-direction: column;
   }
+  &__separator {
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      height: 0.1rem;
+      width: 45%;
+      position: absolute;
+      top: 50%;
+      background-color: rgba($primary-dark, 0.05);
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
   &__footer {
+    padding: 1rem 0;
+    font-size: 1.3rem;
+    color: rgba($primary-dark, 0.7);
+    ul {
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      li {
+        padding: 0.5rem 1rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }

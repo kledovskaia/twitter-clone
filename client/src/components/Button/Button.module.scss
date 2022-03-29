@@ -7,9 +7,10 @@
   align-items: center;
   & > * + * {
     margin-left: 0.5rem;
-    svg {
-      max-width: 3rem;
-    }
+  }
+  svg {
+    fill: currentColor;
+    max-width: 2.25rem;
   }
   padding: 1rem;
   border: 0;
@@ -19,13 +20,14 @@
   font-weight: 600;
 
   &_outline {
-    @extend .button_auth;
+    background-color: $primary-light;
     color: $secondary;
+    border: 0.1rem solid currentColor;
+    border-color: rgba($primary-dark, 0.15);
   }
   &_auth {
-    background-color: $primary-light;
+    @extend .button_outline;
     color: inherit;
-    border: 0.1rem solid currentColor;
-    border-color: rgba($primary-dark, 0.25);
+    padding: 0.75rem;
   }
 }
