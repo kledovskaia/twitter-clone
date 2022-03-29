@@ -1,0 +1,22 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+  scrollbar-color: rgb(185, 202, 211) rgb(247, 249, 249);
+  font-size: 1.6rem;
+  font-family: Archivo, sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
