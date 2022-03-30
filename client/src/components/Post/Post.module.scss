@@ -1,0 +1,15 @@
+.post {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1.5rem;
+
+  &__header {
+    display: flex;
+  }
+  &__body {
+  }
+  &__footer {
+    display: flex;
+  }
+}

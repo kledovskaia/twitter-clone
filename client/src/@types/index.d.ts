@@ -24,3 +24,18 @@ declare module '*.module.scss' {
   };
   export default content;
 }
+
+type TPost = {
+  author: TAuthor;
+  content: string;
+  replied: number;
+  retwitted: number;
+  liked: number;
+  timestamp: number;
+};
+
+type TAuthor = {
+  name: string;
+  username: string;
+  image: string;
+};
