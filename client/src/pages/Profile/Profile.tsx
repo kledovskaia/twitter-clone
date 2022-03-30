@@ -12,7 +12,7 @@ const post = {
   replied: 1337,
   retwitted: 1984,
   liked: 128000,
-  timestamp: Date.now(),
+  timestamp: new Date(2021).getTime(),
 };
 
 const Profile = () => {

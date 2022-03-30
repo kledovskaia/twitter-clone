@@ -1,15 +1,57 @@
+@import '../../styles/variables';
+
 .post {
-  padding: 2rem;
   display: grid;
   grid-template-columns: max-content 1fr;
-  gap: 1.5rem;
+
+  &__imageContainer {
+    padding: 1.5rem 1rem 1.5rem 1.5rem;
+  }
+  &__contentContainer {
+    padding: 1rem;
+  }
 
   &__header {
+    font-size: 1.5rem;
     display: flex;
+    align-items: center;
+    line-height: 1;
+
+    div {
+      display: flex;
+      align-items: baseline;
+      & > * + * {
+        margin-left: 1rem;
+      }
+    }
+
+    & > :last-child {
+      margin-left: auto;
+    }
   }
+
+  &__name {
+    font-weight: bold;
+  }
+  &__username {
+    color: rgba($primary-dark, 0.7);
+  }
+  &__time {
+    color: rgba($primary-dark, 0.7);
+    position: relative;
+    &::before {
+      content: '.';
+      position: absolute;
+      top: -25%;
+      left: -0.75rem;
+    }
+  }
+
   &__body {
   }
   &__footer {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    justify-items: start;
   }
 }

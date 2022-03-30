@@ -5,12 +5,14 @@ import classNames from 'classnames';
 enum modificators {
   outline,
   auth,
+  icon,
 }
 
 type Props = {
   [key in keyof typeof modificators]?: boolean;
 } & {
   children: ReactNode;
+  label?: string;
   onClick?: (...arg: any[]) => void;
 };
 
@@ -29,6 +31,7 @@ const Button: FC<Props> = (props) => {
       )}
     >
       {props.children}
+      {props.label && <span className={s.button__label}>{props.label}</span>}
     </button>
   );
 };

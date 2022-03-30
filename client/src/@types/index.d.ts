@@ -26,7 +26,7 @@ declare module '*.module.scss' {
 }
 
 type TPost = {
-  author: TAuthor;
+  author: TUser;
   content: string;
   replied: number;
   retwitted: number;
@@ -34,7 +34,7 @@ type TPost = {
   timestamp: number;
 };
 
-type TAuthor = {
+type TUser = {
   name: string;
   username: string;
   image: string;

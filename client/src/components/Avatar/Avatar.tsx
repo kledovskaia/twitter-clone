@@ -2,8 +2,8 @@ import { FC } from 'react';
 import s from './Avatar.module.scss';
 
 type Props = {
-  src: TAuthor['image'];
-  alt: TAuthor['name'];
+  src: TUser['image'];
+  alt: TUser['name'];
   size: number;
 };
 

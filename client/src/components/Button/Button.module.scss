@@ -1,28 +1,56 @@
 @import '../../styles/variables';
 
 .button {
-  cursor: pointer;
-  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+
+  padding: 1rem;
+  border: 0;
+  border-radius: 10rem;
+  background-color: $secondary;
+
+  cursor: pointer;
+  color: $primary-light;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s, color 0.2s;
+
   & > * + * {
     margin-left: 0.5rem;
   }
   svg {
     fill: currentColor;
     max-width: 2.25rem;
+    transition: background-color 0.2s, fill 0.2s;
   }
-  padding: 1rem;
-  border: 0;
-  border-radius: 10rem;
-  background-color: $secondary;
-  color: $primary-light;
-  font-weight: 600;
-  transition: background-color 0.2s;
 
   &:hover {
     background-color: darken($secondary, 10);
+  }
+
+  &__label {
+    opacity: 0;
+    padding: 0.5rem 0.6rem 0.4rem;
+    position: absolute;
+    bottom: -2.5rem;
+    left: 1.4rem;
+    transform: translateX(-50%);
+    border-radius: 0.25rem;
+
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: $primary-light;
+    background-color: rgba($primary-dark, 0.6);
+    transition: opacity 0.2s;
+    transition-delay: 0.4s;
+  }
+
+  &:hover {
+    .button__label {
+      opacity: 1;
+    }
   }
 
   &_outline {
@@ -30,8 +58,24 @@
     color: $secondary;
     border: 0.1rem solid currentColor;
     border-color: rgba($primary-dark, 0.15);
+  }
+  &_icon {
+    font-weight: normal;
+    color: rgba($primary-dark, 0.6);
+    background-color: transparent;
+    padding: 0;
+    svg {
+      fill: currentColor;
+      padding: 0.75rem;
+      min-width: 3.5rem;
+      border-radius: 10rem;
+    }
     &:hover {
-      background-color: rgba($secondary, 0.1);
+      color: $secondary;
+      background-color: transparent;
+      svg {
+        background-color: rgba($secondary, 0.1);
+      }
     }
   }
   &_auth {
