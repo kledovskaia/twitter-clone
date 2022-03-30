@@ -5,10 +5,11 @@
   grid-template-columns: max-content 1fr;
 
   &__imageContainer {
-    padding: 1.5rem 1rem 1.5rem 1.5rem;
+    padding: 1.5rem 1.25rem 1.5rem 1.5rem;
   }
   &__contentContainer {
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
   }
 
   &__header {
@@ -50,6 +51,7 @@
   &__body {
   }
   &__footer {
+    margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     justify-items: start;
