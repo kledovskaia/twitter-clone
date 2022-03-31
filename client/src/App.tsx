@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Feed from './containers/Feed/Feed';
+import Page from './containers/Page/Page';
 import Explore from './pages/Explore/Explore';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
@@ -8,11 +8,11 @@ import Notifications from './pages/Notifications/Notifications';
 import Profile from './pages/Profile/Profile';
 
 const App = () => {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   if (isLoggedIn)
     return (
-      <Feed>
+      <Page>
         <Routes>
           <Route path="/messages" element={<Messages />} />
           <Route path="/explore" element={<Explore />} />
@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/:profileId" element={<Profile />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
-      </Feed>
+      </Page>
     );
 
   return (
@@ -29,17 +29,17 @@ const App = () => {
       <Route
         path="/:profileId"
         element={
-          <Feed>
+          <Page>
             <Profile />
-          </Feed>
+          </Page>
         }
       />
       <Route
         path="/explore"
         element={
-          <Feed>
+          <Page>
             <Explore />
-          </Feed>
+          </Page>
         }
       />
       <Route path="/messages" element={<Navigate to="/" />} />
