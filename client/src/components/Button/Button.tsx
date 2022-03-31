@@ -6,6 +6,7 @@ enum modificators {
   outline,
   auth,
   icon,
+  dark,
 }
 
 type Props = {

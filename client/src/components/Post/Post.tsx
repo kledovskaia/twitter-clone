@@ -8,6 +8,7 @@ import { ReactComponent as RetweetIcon } from '../../assets/retweet.svg';
 import { ReactComponent as LikeIcon } from '../../assets/like.svg';
 import { ReactComponent as ShareIcon } from '../../assets/share.svg';
 import Button from '../Button/Button';
+import { months } from '../../constants/months';
 
 const timeanConfig = {
   replacer: '%d',
@@ -21,20 +22,7 @@ const timeanConfig = {
     year: '',
   },
 };
-const months = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec',
-];
+
 type Props = TPost;
 
 const Post: FC<Props> = ({
@@ -59,7 +47,7 @@ const Post: FC<Props> = ({
             <p className={s.post__username}>@{author.username}</p>
             <p className={s.post__time}>
               {timean.fromNow(date, timeanConfig) ||
-                `${date.getDate() + 1} ${months[date.getMonth()]}`}
+                `${months.short[date.getMonth()]} ${date.getDate() + 1}`}
             </p>
           </div>
           <Button label="More" icon>

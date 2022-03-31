@@ -3,6 +3,9 @@ import ProfilePhoto from '../../assets/profilePhoto.jpg';
 import ProfileHero from '../../assets/profileHero.jpeg';
 import s from './Profile.module.scss';
 import Avatar from '../../components/Avatar/Avatar';
+import Button from '../../components/Button/Button';
+import { months } from '../../constants/months';
+import { ReactComponent as CalendarLogo } from '../../assets/calendar.svg';
 
 const post = {
   author: {
@@ -23,6 +26,9 @@ const profile = {
   username: 'elonmusk',
   image: ProfilePhoto,
   hero: ProfileHero,
+  createdAt: new Date(2009, 5).getTime(),
+  followingCount: 112,
+  followersCount: 79700000,
 };
 
 const Profile = () => {
@@ -31,12 +37,42 @@ const Profile = () => {
   return (
     <section className={s.profile}>
       <header>
-        <div
-          style={{ backgroundImage: profile.hero }}
+        <img
           className={s.profile__hero}
+          src={profile.hero}
+          alt={profile.name}
         />
-        <div className={s.profile__info}>
-          <Avatar size={12} src={profile.image} alt={profile.name} />
+        <div className={s.profile__content}>
+          <div className={s.profile__contentHeader}>
+            <Avatar
+              className={s.profile__photo}
+              size={14}
+              src={profile.image}
+              alt={profile.name}
+            />
+            <Button dark>Follow</Button>
+          </div>
+          <div className={s.profile__info}>
+            <h2>{profile.name}</h2>
+            <p className={s.profile__username}>@{profile.username}</p>
+            <p className={s.profile__joined}>
+              <CalendarLogo />
+              <span>
+                Joined {months.long[new Date(profile.createdAt).getMonth()]}{' '}
+                {new Date(profile.createdAt).getFullYear()}
+              </span>
+            </p>
+            <div className={s.profile__statisticContainer}>
+              <p className={s.profile__statistic}>
+                <span>{profile.followingCount}</span>
+                <span>Following</span>
+              </p>
+              <p className={s.profile__statistic}>
+                <span>{profile.followersCount}</span>
+                <span>Followers</span>
+              </p>
+            </div>
+          </div>
         </div>
       </header>
       <section>
