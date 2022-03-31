@@ -6,6 +6,7 @@ import Avatar from '../../components/Avatar/Avatar';
 import Button from '../../components/Button/Button';
 import { months } from '../../constants/months';
 import { ReactComponent as CalendarLogo } from '../../assets/calendar.svg';
+import { Link, Route, Routes } from 'react-router-dom';
 
 const post = {
   author: {
@@ -33,7 +34,6 @@ const profile = {
 
 const Profile = () => {
   const posts = new Array(10).fill(post);
-
   return (
     <section className={s.profile}>
       <header>
@@ -75,11 +75,27 @@ const Profile = () => {
           </div>
         </div>
       </header>
-      <section>
-        {posts.map((post, i) => (
-          <Post key={i} {...post} />
-        ))}
-      </section>
+      <nav>
+        <Link to={`/${profile.username}/`} />
+        <Link to={`/${profile.username}/with-replies`} />
+        <Link to={`/${profile.username}/media`} />
+        <Link to={`/${profile.username}/likes`} />
+      </nav>
+      <Routes>
+        <Route
+          path=""
+          element={
+            <section>
+              {posts.map((post, i) => (
+                <Post key={i} {...post} />
+              ))}
+            </section>
+          }
+        />
+        <Route path="with-replies" element={<div>with replies</div>} />
+        <Route path="media" element={<div>media</div>} />
+        <Route path="likes" element={<div>likes</div>} />
+      </Routes>
     </section>
   );
 };

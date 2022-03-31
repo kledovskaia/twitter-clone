@@ -27,7 +27,7 @@ const App = () => {
   return (
     <Routes>
       <Route
-        path="/:profileId"
+        path="/:profileId/*"
         element={
           <Page>
             <Profile />
