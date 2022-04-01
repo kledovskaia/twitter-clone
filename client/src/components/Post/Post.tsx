@@ -10,6 +10,7 @@ import { ReactComponent as ShareIcon } from '../../assets/share.svg';
 import Button from '../Button/Button';
 import { months } from '../../constants/months';
 import ProfileInfo from '../ProfileInfo/ProfileInfo';
+import { Link } from 'react-router-dom';
 
 const timeanConfig = {
   replacer: '%d',
@@ -39,13 +40,26 @@ const Post: FC<Props> = ({
   return (
     <article className={s.post}>
       <div className={s.post__imageContainer}>
-        <Avatar size={5} src={author.image} alt={author.name} />
-        <ProfileInfo {...author} preview />
+        <Link className={s.post__link} to={`/${author.username}`}>
+          <Avatar size={5} src={author.image} alt={author.name} />
+          <div className={s.post__profilePreview}>
+            <div className={s.post__profilePreviewInner}>
+              <ProfileInfo {...author} preview />
+            </div>
+          </div>
+        </Link>
       </div>
       <div className={s.post__contentContainer}>
         <header className={s.post__header}>
           <div>
-            <p className={s.post__name}>{author.name}</p>
+            <Link className={s.post__link} to={`/${author.username}`}>
+              <p className={s.post__name}>{author.name}</p>
+              <div className={s.post__profilePreview}>
+                <div className={s.post__profilePreviewInner}>
+                  <ProfileInfo {...author} preview />
+                </div>
+              </div>
+            </Link>
             <p className={s.post__username}>@{author.username}</p>
             <p className={s.post__time}>
               {timean.fromNow(date, timeanConfig) ||

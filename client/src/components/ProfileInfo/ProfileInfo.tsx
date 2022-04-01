@@ -4,6 +4,7 @@ import Avatar from '../Avatar/Avatar';
 import Button from '../Button/Button';
 import { ReactComponent as CalendarLogo } from '../../assets/calendar.svg';
 import s from './ProfileInfo.module.scss';
+import classNames from 'classnames';
 
 enum modificators {
   preview,
@@ -23,11 +24,15 @@ const ProfileInfo: FC<Props> = ({
   followersCount,
 }) => {
   return (
-    <section className={s.profileInfo}>
+    <section
+      className={classNames(s.profileInfo, {
+        [s.profileInfo_preview]: preview,
+      })}
+    >
       <div className={s.profileInfo__header}>
         <Avatar
           className={s.profileInfo__photo}
-          size={14}
+          size={preview ? 7 : 14}
           src={image}
           alt={name}
         />

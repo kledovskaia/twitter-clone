@@ -57,10 +57,9 @@ const Profile = () => {
         {links.map((link) => (
           <NavLink
             className={({ isActive }) =>
-              classNames(
-                s.profile__link,
-                isActive ? s.profile__link_active : undefined
-              )
+              classNames(s.profile__link, {
+                [s.profile__link_active]: isActive,
+              })
             }
             to={`/${profile.username}/${link.path}`}
           >

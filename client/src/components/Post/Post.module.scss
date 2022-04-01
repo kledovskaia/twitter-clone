@@ -4,6 +4,33 @@
   display: grid;
   grid-template-columns: max-content 1fr;
 
+  &__profilePreview {
+    display: none;
+    padding-top: 1rem;
+    min-width: 30rem;
+    z-index: 1;
+    position: absolute;
+    bottom: 0rem;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    &Inner {
+      background-color: $primary-light;
+      border-radius: 2rem;
+      box-shadow: 0 0 1rem rgba($primary-dark, 0.25);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    &:hover {
+      .post__profilePreview {
+        display: block;
+      }
+    }
+  }
+
   &__imageContainer {
     padding: 1.5rem 1.25rem 1.5rem 1.5rem;
   }
@@ -18,7 +45,7 @@
     align-items: center;
     line-height: 1;
 
-    div {
+    & > div {
       display: flex;
       align-items: baseline;
       & > * + * {
