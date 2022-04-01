@@ -6,7 +6,8 @@ import Avatar from '../../components/Avatar/Avatar';
 import Button from '../../components/Button/Button';
 import { months } from '../../constants/months';
 import { ReactComponent as CalendarLogo } from '../../assets/calendar.svg';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Navigate, NavLink, Route, Routes } from 'react-router-dom';
+import classNames from 'classnames';
 
 const post = {
   author: {
@@ -31,6 +32,13 @@ const profile = {
   followingCount: 112,
   followersCount: 79700000,
 };
+
+const links = [
+  { anchor: 'Tweets', path: '' },
+  { anchor: 'Tweets & replies', path: 'with-replies' },
+  { anchor: 'Media', path: 'media' },
+  { anchor: 'Likes', path: 'likes' },
+];
 
 const Profile = () => {
   const posts = new Array(10).fill(post);
@@ -75,11 +83,20 @@ const Profile = () => {
           </div>
         </div>
       </header>
-      <nav>
-        <Link to={`/${profile.username}/`} />
-        <Link to={`/${profile.username}/with-replies`} />
-        <Link to={`/${profile.username}/media`} />
-        <Link to={`/${profile.username}/likes`} />
+      <nav className={s.profile__navigation}>
+        {links.map((link) => (
+          <NavLink
+            className={({ isActive }) =>
+              classNames(
+                s.profile__link,
+                isActive ? s.profile__link_active : undefined
+              )
+            }
+            to={`/${profile.username}/${link.path}`}
+          >
+            <span>{link.anchor}</span>
+          </NavLink>
+        ))}
       </nav>
       <Routes>
         <Route
@@ -95,6 +112,7 @@ const Profile = () => {
         <Route path="with-replies" element={<div>with replies</div>} />
         <Route path="media" element={<div>media</div>} />
         <Route path="likes" element={<div>likes</div>} />
+        <Route path="*" element={<Navigate to="" />} />
       </Routes>
     </section>
   );
