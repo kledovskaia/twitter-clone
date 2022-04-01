@@ -9,6 +9,7 @@ import { ReactComponent as LikeIcon } from '../../assets/like.svg';
 import { ReactComponent as ShareIcon } from '../../assets/share.svg';
 import Button from '../Button/Button';
 import { months } from '../../constants/months';
+import ProfileInfo from '../ProfileInfo/ProfileInfo';
 
 const timeanConfig = {
   replacer: '%d',
@@ -39,6 +40,7 @@ const Post: FC<Props> = ({
     <article className={s.post}>
       <div className={s.post__imageContainer}>
         <Avatar size={5} src={author.image} alt={author.name} />
+        <ProfileInfo {...author} preview />
       </div>
       <div className={s.post__contentContainer}>
         <header className={s.post__header}>

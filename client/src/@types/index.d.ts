@@ -43,4 +43,7 @@ type TUser = {
   name: string;
   username: string;
   image: string;
+  createdAt: number;
+  followingCount: number;
+  followersCount: number;
 };

@@ -8,6 +8,7 @@ import { months } from '../../constants/months';
 import { ReactComponent as CalendarLogo } from '../../assets/calendar.svg';
 import { Navigate, NavLink, Route, Routes } from 'react-router-dom';
 import classNames from 'classnames';
+import ProfileInfo from '../../components/ProfileInfo/ProfileInfo';
 
 const post = {
   author: {
@@ -50,38 +51,7 @@ const Profile = () => {
           src={profile.hero}
           alt={profile.name}
         />
-        <div className={s.profile__content}>
-          <div className={s.profile__contentHeader}>
-            <Avatar
-              className={s.profile__photo}
-              size={14}
-              src={profile.image}
-              alt={profile.name}
-            />
-            <Button dark>Follow</Button>
-          </div>
-          <div className={s.profile__info}>
-            <h2>{profile.name}</h2>
-            <p className={s.profile__username}>@{profile.username}</p>
-            <p className={s.profile__joined}>
-              <CalendarLogo />
-              <span>
-                Joined {months.long[new Date(profile.createdAt).getMonth()]}{' '}
-                {new Date(profile.createdAt).getFullYear()}
-              </span>
-            </p>
-            <div className={s.profile__statisticContainer}>
-              <p className={s.profile__statistic}>
-                <span>{profile.followingCount}</span>
-                <span>Following</span>
-              </p>
-              <p className={s.profile__statistic}>
-                <span>{profile.followersCount}</span>
-                <span>Followers</span>
-              </p>
-            </div>
-          </div>
-        </div>
+        <ProfileInfo {...profile} />
       </header>
       <nav className={s.profile__navigation}>
         {links.map((link) => (

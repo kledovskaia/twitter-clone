@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+
+.profileInfo {
+  padding: 1rem 1.5rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__photo {
+    border: 0.4rem solid $primary-light;
+    margin-top: -9rem;
+  }
+  &__body {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+  &__username,
+  &__joined,
+  &__statisticContainer {
+    color: rgba($primary-dark, 0.7);
+  }
+  &__username {
+    margin-top: 0.3rem;
+  }
+  &__joined {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+
+    & > * + * {
+      padding-left: 0.25rem;
+    }
+
+    svg {
+      fill: currentColor;
+      max-width: 2rem;
+    }
+  }
+  &__statisticContainer {
+    margin-top: 1rem;
+    display: flex;
+    & > * + * {
+      margin-left: 1.75rem;
+    }
+  }
+  &__statistic {
+    display: flex;
+    & > * + * {
+      margin-left: 0.4rem;
+    }
+    & > :first-child {
+      font-weight: bold;
+      color: $primary-dark;
+    }
+  }
+}
