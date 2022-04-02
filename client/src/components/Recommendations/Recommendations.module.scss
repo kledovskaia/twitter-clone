@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.recommendations {
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  & > * + * {
+    margin-top: 2rem;
+  }
+
+  &__box {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 1.5rem 2rem;
+    border: 0.1rem solid rgba($primary-dark, 0.1);
+  }
+}

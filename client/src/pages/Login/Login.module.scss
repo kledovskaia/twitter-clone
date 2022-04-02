@@ -67,20 +67,9 @@
 
   &__providers {
     max-width: 32rem;
-    display: flex;
-    flex-direction: column;
-    h2 {
-      font-size: 3.5rem;
-    }
     h3 {
       font-family: inherit;
       font-size: inherit;
-    }
-    button:first-of-type {
-      margin-top: 2rem;
-    }
-    button + button {
-      margin-top: 2rem;
     }
   }
 

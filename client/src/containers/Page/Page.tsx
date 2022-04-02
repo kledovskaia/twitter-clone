@@ -15,7 +15,7 @@ const Page: FC = ({ children }) => {
         <Header />
         {children}
       </main>
-      <div className={classNames(s.page__sidebar, s.page__sidebar_left)}>
+      <div className={classNames(s.page__sidebar, s.page__sidebar_right)}>
         <Recommendations />
       </div>
     </div>

@@ -1,6 +1,23 @@
 @import '../../styles/variables';
 
 .cta {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-size: 3.5rem;
+  }
+  button:first-of-type {
+    margin-top: 2rem;
+  }
+  button + button {
+    margin-top: 2rem;
+  }
+  &__subtitle {
+    letter-spacing: 0.05rem;
+    margin: 0;
+    font-size: 1.4rem;
+    color: rgba($primary-dark, 0.6);
+  }
   &__separator {
     font-size: 1.4rem;
     text-align: center;

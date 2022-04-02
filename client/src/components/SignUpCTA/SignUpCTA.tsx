@@ -7,14 +7,14 @@ import { FC } from 'react';
 type Props = {
   title: string;
   subtitle?: string;
-  withSeparator: boolean;
+  withSeparator?: boolean;
 };
 
 const SignUpCTA: FC<Props> = ({ title, subtitle, withSeparator }) => {
   return (
-    <>
+    <section className={s.cta}>
       <h2>{title}</h2>
-      {subtitle && <p>{subtitle}</p>}
+      {subtitle && <p className={s.cta__subtitle}>{subtitle}</p>}
       <Button auth>
         <GoogleIcon />
         <span>Sign up with Google</span>
@@ -30,7 +30,7 @@ const SignUpCTA: FC<Props> = ({ title, subtitle, withSeparator }) => {
         and <a href="#twitter">Privacy Policy</a>, including{' '}
         <a href="#twitter">Cookie Use</a>.
       </p>
-    </>
+    </section>
   );
 };
 
