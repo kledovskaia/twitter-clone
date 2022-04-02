@@ -1,0 +1,12 @@
+.navigation {
+  ul {
+    list-style: none;
+    a {
+      display: flex;
+
+      svg {
+        max-width: 3rem;
+      }
+    }
+  }
+}
