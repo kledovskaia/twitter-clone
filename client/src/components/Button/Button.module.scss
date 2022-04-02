@@ -52,13 +52,6 @@
       opacity: 1;
     }
   }
-
-  &_outline {
-    background-color: $primary-light;
-    color: $secondary;
-    border: 0.1rem solid currentColor;
-    border-color: rgba($primary-dark, 0.15);
-  }
   &_icon {
     font-size: 1.4rem;
     font-weight: normal;
@@ -77,6 +70,15 @@
       svg {
         background-color: rgba($secondary, 0.1);
       }
+    }
+  }
+  &_outline {
+    background-color: $primary-light;
+    color: $secondary;
+    border: 0.1rem solid currentColor;
+    border-color: rgba($primary-dark, 0.15);
+    &:hover {
+      background-color: rgba($primary-dark, 0.05);
     }
   }
   &_auth {

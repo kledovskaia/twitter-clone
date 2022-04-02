@@ -2,11 +2,14 @@ import Post from '../../components/Post/Post';
 import ProfilePhoto from '../../assets/profilePhoto.jpg';
 import ProfileHero from '../../assets/profileHero.jpeg';
 import s from './Profile.module.scss';
-import Avatar from '../../components/Avatar/Avatar';
-import Button from '../../components/Button/Button';
-import { months } from '../../constants/months';
-import { ReactComponent as CalendarLogo } from '../../assets/calendar.svg';
-import { Navigate, NavLink, Route, Routes } from 'react-router-dom';
+import {
+  Navigate,
+  NavLink,
+  Route,
+  Routes,
+  useLocation,
+  useParams,
+} from 'react-router-dom';
 import classNames from 'classnames';
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo';
 
@@ -42,6 +45,8 @@ const links = [
 ];
 
 const Profile = () => {
+  const { pathname } = useLocation();
+
   const posts = new Array(10).fill(post);
   return (
     <section className={s.profile}>
@@ -58,10 +63,13 @@ const Profile = () => {
           <NavLink
             className={({ isActive }) =>
               classNames(s.profile__link, {
-                [s.profile__link_active]: isActive,
+                [s.profile__link_active]:
+                  link.path === ''
+                    ? pathname === `/${profile.username}`
+                    : isActive,
               })
             }
-            to={`/${profile.username}/${link.path}`}
+            to={!link.path ? '' : `/${profile.username}/${link.path}`}
           >
             <span>{link.anchor}</span>
           </NavLink>

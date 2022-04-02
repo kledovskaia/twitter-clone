@@ -1,4 +1,6 @@
 .page {
+  max-width: 114rem;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 0.25fr 1fr 0.25fr;
 
