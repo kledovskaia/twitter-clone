@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+
+.cta {
+  &__separator {
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      height: 0.1rem;
+      width: 45%;
+      position: absolute;
+      top: 50%;
+      background-color: rgba($primary-dark, 0.05);
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+  &__agreement {
+    letter-spacing: 0.05rem;
+    padding: 1rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: rgba($primary-dark, 0.6);
+    a {
+      color: $secondary;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
